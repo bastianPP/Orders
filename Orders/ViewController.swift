@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Este es un proyecto de ejemplo")
+        let today = NSDate()
+        print(today)
     }
 
     override func didReceiveMemoryWarning() {
