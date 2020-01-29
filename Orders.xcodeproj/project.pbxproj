@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		5D98CD5523E0B342000CC1BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D98CD5423E0B342000CC1BE /* AppDelegate.swift */; };
-		5D98CD5723E0B342000CC1BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D98CD5623E0B342000CC1BE /* ViewController.swift */; };
 		5D98CD5A23E0B342000CC1BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D98CD5823E0B342000CC1BE /* Main.storyboard */; };
 		5D98CD5D23E0B342000CC1BE /* Orders.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D98CD5B23E0B342000CC1BE /* Orders.xcdatamodeld */; };
 		5D98CD5F23E0B343000CC1BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D98CD5E23E0B343000CC1BE /* Assets.xcassets */; };
 		5D98CD6223E0B343000CC1BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D98CD6023E0B343000CC1BE /* LaunchScreen.storyboard */; };
 		5D98CD6D23E0B343000CC1BE /* OrdersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D98CD6C23E0B343000CC1BE /* OrdersTests.swift */; };
 		5D98CD7823E0B343000CC1BE /* OrdersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D98CD7723E0B343000CC1BE /* OrdersUITests.swift */; };
+		5D98CD8723E1F1FE000CC1BE /* OrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D98CD8623E1F1FE000CC1BE /* OrdersTableViewController.swift */; };
+		5D98CD8923E1F289000CC1BE /* AddOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D98CD8823E1F289000CC1BE /* AddOrderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +38,6 @@
 /* Begin PBXFileReference section */
 		5D98CD5123E0B342000CC1BE /* Orders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Orders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D98CD5423E0B342000CC1BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5D98CD5623E0B342000CC1BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5D98CD5923E0B342000CC1BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5D98CD5C23E0B342000CC1BE /* Orders.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Orders.xcdatamodel; sourceTree = "<group>"; };
 		5D98CD5E23E0B343000CC1BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +49,8 @@
 		5D98CD7323E0B343000CC1BE /* OrdersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrdersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D98CD7723E0B343000CC1BE /* OrdersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersUITests.swift; sourceTree = "<group>"; };
 		5D98CD7923E0B343000CC1BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D98CD8623E1F1FE000CC1BE /* OrdersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersTableViewController.swift; sourceTree = "<group>"; };
+		5D98CD8823E1F289000CC1BE /* AddOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +101,8 @@
 		5D98CD5323E0B342000CC1BE /* Orders */ = {
 			isa = PBXGroup;
 			children = (
+				5D98CD8523E1F1C7000CC1BE /* Controllers */,
 				5D98CD5423E0B342000CC1BE /* AppDelegate.swift */,
-				5D98CD5623E0B342000CC1BE /* ViewController.swift */,
 				5D98CD5823E0B342000CC1BE /* Main.storyboard */,
 				5D98CD5E23E0B343000CC1BE /* Assets.xcassets */,
 				5D98CD6023E0B343000CC1BE /* LaunchScreen.storyboard */,
@@ -126,6 +128,15 @@
 				5D98CD7923E0B343000CC1BE /* Info.plist */,
 			);
 			path = OrdersUITests;
+			sourceTree = "<group>";
+		};
+		5D98CD8523E1F1C7000CC1BE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5D98CD8623E1F1FE000CC1BE /* OrdersTableViewController.swift */,
+				5D98CD8823E1F289000CC1BE /* AddOrderViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,9 +270,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D98CD5723E0B342000CC1BE /* ViewController.swift in Sources */,
 				5D98CD5D23E0B342000CC1BE /* Orders.xcdatamodeld in Sources */,
 				5D98CD5523E0B342000CC1BE /* AppDelegate.swift in Sources */,
+				5D98CD8723E1F1FE000CC1BE /* OrdersTableViewController.swift in Sources */,
+				5D98CD8923E1F289000CC1BE /* AddOrderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
