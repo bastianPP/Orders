@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -52,10 +53,67 @@
                     <view key="view" contentMode="scaleToFill" id="PBs-72-cNw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OGV-DP-Mlz">
+                                <rect key="frame" x="0.0" y="64" width="375" height="334"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="VEF-kH-Ph3">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VEF-kH-Ph3" id="FkR-CP-dFQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nl5-X7-X9d">
+                                <rect key="frame" x="88" y="513" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="2md-zF-AZb"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5j7-Td-2kI">
+                                <rect key="frame" x="88" y="568" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="f2T-Vw-BJv"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NXj-Mt-b76">
+                                <rect key="frame" x="92" y="435" width="191" height="29"/>
+                                <segments>
+                                    <segment title="Small"/>
+                                    <segment title="Medium"/>
+                                    <segment title="Large"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="OGV-DP-Mlz" firstAttribute="height" secondItem="PBs-72-cNw" secondAttribute="height" multiplier="0.5" id="0ep-0l-mOl"/>
+                            <constraint firstItem="NXj-Mt-b76" firstAttribute="top" secondItem="OGV-DP-Mlz" secondAttribute="bottom" constant="37.5" id="4fd-w2-36k"/>
+                            <constraint firstItem="OGV-DP-Mlz" firstAttribute="width" secondItem="PBs-72-cNw" secondAttribute="width" id="6La-Wl-oIG"/>
+                            <constraint firstItem="Nl5-X7-X9d" firstAttribute="top" secondItem="NXj-Mt-b76" secondAttribute="bottom" constant="50" id="BM1-RS-sYg"/>
+                            <constraint firstItem="OGV-DP-Mlz" firstAttribute="top" secondItem="Zdz-cI-ah0" secondAttribute="top" id="EB8-1J-bBt"/>
+                            <constraint firstItem="OGV-DP-Mlz" firstAttribute="leading" secondItem="Zdz-cI-ah0" secondAttribute="leading" id="RIE-N1-r0E"/>
+                            <constraint firstItem="5j7-Td-2kI" firstAttribute="centerX" secondItem="PBs-72-cNw" secondAttribute="centerX" id="SDx-mc-dgd"/>
+                            <constraint firstItem="Nl5-X7-X9d" firstAttribute="centerX" secondItem="PBs-72-cNw" secondAttribute="centerX" id="TsS-gO-9Cd"/>
+                            <constraint firstItem="NXj-Mt-b76" firstAttribute="centerX" secondItem="PBs-72-cNw" secondAttribute="centerX" id="U2H-YI-bNp"/>
+                            <constraint firstItem="5j7-Td-2kI" firstAttribute="top" secondItem="Nl5-X7-X9d" secondAttribute="bottom" constant="25" id="gXd-wO-VkU"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Zdz-cI-ah0"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add New Order" id="CVx-Rj-zQX"/>
+                    <navigationItem key="navigationItem" title="Add New Order" id="CVx-Rj-zQX">
+                        <barButtonItem key="leftBarButtonItem" title="Close" style="plain" id="lAc-ME-D8y"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="Sr7-3l-3QF"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8zi-lZ-E1a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
