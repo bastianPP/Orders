@@ -17,6 +17,7 @@
 		5D98CD8723E1F1FE000CC1BE /* OrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D98CD8623E1F1FE000CC1BE /* OrdersTableViewController.swift */; };
 		5D98CD8923E1F289000CC1BE /* AddOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D98CD8823E1F289000CC1BE /* AddOrderViewController.swift */; };
 		5D98CD9523E209BB000CC1BE /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D98CD9423E209BB000CC1BE /* Webservice.swift */; };
+		5D98CD9823E341A1000CC1BE /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D98CD9723E341A1000CC1BE /* Order.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		5D98CD8623E1F1FE000CC1BE /* OrdersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersTableViewController.swift; sourceTree = "<group>"; };
 		5D98CD8823E1F289000CC1BE /* AddOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrderViewController.swift; sourceTree = "<group>"; };
 		5D98CD9423E209BB000CC1BE /* Webservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
+		5D98CD9723E341A1000CC1BE /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		5D98CD5323E0B342000CC1BE /* Orders */ = {
 			isa = PBXGroup;
 			children = (
+				5D98CD9623E3412B000CC1BE /* Models */,
 				5D98CD9323E20896000CC1BE /* Services */,
 				5D98CD8523E1F1C7000CC1BE /* Controllers */,
 				5D98CD5423E0B342000CC1BE /* AppDelegate.swift */,
@@ -148,6 +151,14 @@
 				5D98CD9423E209BB000CC1BE /* Webservice.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		5D98CD9623E3412B000CC1BE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5D98CD9723E341A1000CC1BE /* Order.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D98CD9823E341A1000CC1BE /* Order.swift in Sources */,
 				5D98CD5D23E0B342000CC1BE /* Orders.xcdatamodeld in Sources */,
 				5D98CD5523E0B342000CC1BE /* AppDelegate.swift in Sources */,
 				5D98CD8723E1F1FE000CC1BE /* OrdersTableViewController.swift in Sources */,
