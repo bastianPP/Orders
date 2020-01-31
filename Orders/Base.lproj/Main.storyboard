@@ -20,12 +20,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="brk-Dx-8lu">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OderTableViewCell" textLabel="aN7-dQ-D4f" detailTextLabel="yGv-E1-Dr4" style="IBUITableViewCellStyleValue1" id="brk-Dx-8lu">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="brk-Dx-8lu" id="ewd-3G-CUX">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aN7-dQ-D4f">
+                                            <rect key="frame" x="16" y="12" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yGv-E1-Dr4">
+                                            <rect key="frame" x="315" y="12" width="44" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -49,7 +65,7 @@
         <!--Add New Order-->
         <scene sceneID="B0v-dC-Cuh">
             <objects>
-                <viewController id="uHh-1t-r2Y" customClass="AddOrderViewControlloer" customModule="Orders" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="uHh-1t-r2Y" customClass="AddOrderViewController" customModule="Orders" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PBs-72-cNw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -58,7 +74,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="334"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="VEF-kH-Ph3">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CoffeeTypeTableViewCell" id="VEF-kH-Ph3">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VEF-kH-Ph3" id="FkR-CP-dFQ">
@@ -67,6 +83,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="uHh-1t-r2Y" id="Z43-wm-Gqk"/>
+                                    <outlet property="delegate" destination="uHh-1t-r2Y" id="1wl-CO-Ght"/>
+                                </connections>
                             </tableView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nl5-X7-X9d">
                                 <rect key="frame" x="88" y="513" width="200" height="30"/>
@@ -86,34 +106,33 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NXj-Mt-b76">
-                                <rect key="frame" x="92" y="435" width="191" height="29"/>
-                                <segments>
-                                    <segment title="Small"/>
-                                    <segment title="Medium"/>
-                                    <segment title="Large"/>
-                                </segments>
-                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="OGV-DP-Mlz" firstAttribute="height" secondItem="PBs-72-cNw" secondAttribute="height" multiplier="0.5" id="0ep-0l-mOl"/>
-                            <constraint firstItem="NXj-Mt-b76" firstAttribute="top" secondItem="OGV-DP-Mlz" secondAttribute="bottom" constant="37.5" id="4fd-w2-36k"/>
                             <constraint firstItem="OGV-DP-Mlz" firstAttribute="width" secondItem="PBs-72-cNw" secondAttribute="width" id="6La-Wl-oIG"/>
-                            <constraint firstItem="Nl5-X7-X9d" firstAttribute="top" secondItem="NXj-Mt-b76" secondAttribute="bottom" constant="50" id="BM1-RS-sYg"/>
                             <constraint firstItem="OGV-DP-Mlz" firstAttribute="top" secondItem="Zdz-cI-ah0" secondAttribute="top" id="EB8-1J-bBt"/>
                             <constraint firstItem="OGV-DP-Mlz" firstAttribute="leading" secondItem="Zdz-cI-ah0" secondAttribute="leading" id="RIE-N1-r0E"/>
                             <constraint firstItem="5j7-Td-2kI" firstAttribute="centerX" secondItem="PBs-72-cNw" secondAttribute="centerX" id="SDx-mc-dgd"/>
                             <constraint firstItem="Nl5-X7-X9d" firstAttribute="centerX" secondItem="PBs-72-cNw" secondAttribute="centerX" id="TsS-gO-9Cd"/>
-                            <constraint firstItem="NXj-Mt-b76" firstAttribute="centerX" secondItem="PBs-72-cNw" secondAttribute="centerX" id="U2H-YI-bNp"/>
+                            <constraint firstItem="Zdz-cI-ah0" firstAttribute="bottom" secondItem="5j7-Td-2kI" secondAttribute="bottom" constant="69" id="dVS-Lk-ew3"/>
                             <constraint firstItem="5j7-Td-2kI" firstAttribute="top" secondItem="Nl5-X7-X9d" secondAttribute="bottom" constant="25" id="gXd-wO-VkU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Zdz-cI-ah0"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add New Order" id="CVx-Rj-zQX">
                         <barButtonItem key="leftBarButtonItem" title="Close" style="plain" id="lAc-ME-D8y"/>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="Sr7-3l-3QF"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="Sr7-3l-3QF">
+                            <connections>
+                                <action selector="save" destination="uHh-1t-r2Y" id="dp0-ij-UOU"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="emailTextField" destination="5j7-Td-2kI" id="mcf-MX-YRZ"/>
+                        <outlet property="nameTextField" destination="Nl5-X7-X9d" id="mnm-SD-ocB"/>
+                        <outlet property="tableView" destination="OGV-DP-Mlz" id="ZHK-Mg-iZT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8zi-lZ-E1a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
