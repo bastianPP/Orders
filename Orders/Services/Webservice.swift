@@ -14,6 +14,11 @@ enum NetworkError: Error {
     case urlError
 }
 
+enum HttpMethod: String {
+    case get = "GET"
+    case post = "POST"
+}
+
 enum Result<Value, Error> {
     case success(Value)
     case failure(Error)
@@ -21,12 +26,24 @@ enum Result<Value, Error> {
 
 struct Resource<T: Codable> {
     let url: URL
+    var httpMethod: HttpMethod = .get
+    var body: Data? = nil
+}
+
+extension Resource {
+    init(url: URL) {
+        self.url = url
+    }
 }
 
 class Webservice {
     
-    
     func load<T>(resource: Resource<T>, completion: @escaping (Result<T, NetworkError>) -> Void) {
+        
+        var request = URLRequest(url: resource.url)
+        request.httpMethod = resource.httpMethod.rawValue
+        request.httpBody = resource.body
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
         URLSession.shared.dataTask(with: resource.url) { data, response, error in
             
@@ -36,6 +53,7 @@ class Webservice {
             }
             
             let result = try? JSONDecoder().decode(T.self, from: data)
+            
             if let result = result {
                 DispatchQueue.main.async {
                     completion(.success(result))

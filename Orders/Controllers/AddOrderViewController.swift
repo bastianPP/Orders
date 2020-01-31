@@ -65,7 +65,7 @@ class AddOrderViewController: UIViewController, UITableViewDelegate, UITableView
         
         let selectedSize = self.coffeeSizesSegmentedControl.titleForSegment(at: self.coffeeSizesSegmentedControl.selectedSegmentIndex)
         
-        guard let indexPAth = self.tableView.indexPathForSelectedRow else {
+        guard let indexPath = self.tableView.indexPathForSelectedRow else {
             fatalError("Error in selected coffee")
         }
         
@@ -73,6 +73,15 @@ class AddOrderViewController: UIViewController, UITableViewDelegate, UITableView
         self.vm.email = email
         
         self.vm.selectedSize = selectedSize
-        self.vm.selectedType = self.vm.types[indexPAth.row]
+        self.vm.selectedType = self.vm.types[indexPath.row]
+        
+        Webservice().load(resource: Order.create(vm: self.vm)) { result in
+            switch result {
+                case .success(let order):
+                    print(order)
+                case .failure(let error):
+                    print(error)
+            }
+        }
     }
 }
