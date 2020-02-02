@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OderTableViewCell" textLabel="aN7-dQ-D4f" detailTextLabel="yGv-E1-Dr4" style="IBUITableViewCellStyleValue1" id="brk-Dx-8lu">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderTableViewCell" textLabel="aN7-dQ-D4f" detailTextLabel="yGv-E1-Dr4" style="IBUITableViewCellStyleValue1" id="brk-Dx-8lu">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="brk-Dx-8lu" id="ewd-3G-CUX">
@@ -121,8 +121,12 @@
                         <viewLayoutGuide key="safeArea" id="Zdz-cI-ah0"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add New Order" id="CVx-Rj-zQX">
-                        <barButtonItem key="leftBarButtonItem" title="Close" style="plain" id="lAc-ME-D8y"/>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="Sr7-3l-3QF">
+                        <barButtonItem key="leftBarButtonItem" title="Close" style="plain" id="lAc-ME-D8y">
+                            <connections>
+                                <action selector="close" destination="uHh-1t-r2Y" id="xQZ-FY-48C"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" style="plain" id="Sr7-3l-3QF">
                             <connections>
                                 <action selector="save" destination="uHh-1t-r2Y" id="dp0-ij-UOU"/>
                             </connections>

@@ -30,7 +30,7 @@ struct Order: Codable{
 
 extension Order {
     static var all: Resource<[Order]> = {
-        guard let url = URL(string:  "https://guarded-retreat-82533-herokuapp.com/orders") else {
+        guard let url = URL(string:  "https://guarded-retreat-82533.herokuapp.com/orders") else {
             fatalError("URL is incorrect")
         }
         return Resource<[Order]>(url: url)
@@ -40,7 +40,7 @@ extension Order {
         
         let order = Order(vm)
         
-        guard let url = URL(string: "https://guarded-retreat-82533-herokuapp.com/orders") else {
+        guard let url = URL(string: "https://guarded-retreat-82533.herokuapp.com/orders") else {
             fatalError("URL is incorrect!")
         }
         
@@ -48,9 +48,14 @@ extension Order {
             fatalError("Error encoding order!")
         }
         
+        let cadena = String(data: data, encoding: .utf8)!
+        print(cadena)
+        
         var resource = Resource<Order?>(url: url)
         resource.httpMethod = HttpMethod.post
         resource.body = data
+        
+        print(String(data: data, encoding: .utf8))
         
         return resource
     }
