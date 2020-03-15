@@ -39,17 +39,29 @@ extension Resource {
 class Webservice {
     
     func load<T>(resource: Resource<T>, completion: @escaping (Result<T, NetworkError>) -> Void) {
-        
+        print("URL: ", resource.url)
+        print("body: ", resource.httpMethod.rawValue)
         var request = URLRequest(url: resource.url)
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = resource.httpMethod.rawValue
         request.httpBody = resource.body
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        URLSession.shared.dataTask(with: resource.url) { data, response, error in
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
             
-            guard let data = data, error == nil else {
+            if let error = error {
+                print("Error took place \(error)")
+                return
+            }
+            
+            guard let data = data else {
                 completion(.failure(.domainError))
                 return
+            }
+            if let response = response as? HTTPURLResponse {
+                print("Regreso del servicio")
+                print(String(data: data, encoding: .utf8))
+                print("Response HTTP Status code: \(response.statusCode)")
             }
             
             let result = try? JSONDecoder().decode(T.self, from: data)

@@ -48,9 +48,6 @@ extension Order {
             fatalError("Error encoding order!")
         }
         
-        let cadena = String(data: data, encoding: .utf8)!
-        print(cadena)
-        
         var resource = Resource<Order?>(url: url)
         resource.httpMethod = HttpMethod.post
         resource.body = data
@@ -73,7 +70,7 @@ extension Order {
         self.size = selectedSize
     }
 }
-
+/*
 #if swift(>=4.2)
 #else
 public protocol CaseIterable {
@@ -97,3 +94,4 @@ extension CaseIterable where Self: Hashable {
     }
 }
 #endif
+*/
